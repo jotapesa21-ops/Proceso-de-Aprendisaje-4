@@ -91,17 +91,33 @@
       font-size: 0.95rem;
     }
     .btn:hover { opacity: 0.9; }
+
+    /* CONTENEDOR DE LA IMAGEN PRINCIPAL */
     .hero-img {
       background: linear-gradient(135deg, #ffe0b2, #fff3e0);
       border-radius: 1.5rem;
-      height: 260px;
+      padding: 1.5rem;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 1.5rem;
-      font-size: 0.9rem;
+      min-height: 260px;
     }
+    .hero-img-inner {
+      background: #ffffffcc;
+      border-radius: 1.2rem;
+      padding: 0.8rem;
+      max-width: 280px;
+      width: 100%;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    }
+    .hero-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 1rem;
+    }
+
     section {
       padding: 2.5rem 0;
     }
@@ -178,9 +194,10 @@
       padding: 1.5rem 0;
       color: #777;
     }
+
     @media (max-width: 768px) {
       .hero { grid-template-columns: 1fr; }
-      .hero-img { order: -1; }
+      .hero-img { order: -1; margin-bottom: 1.5rem; }
       nav {
         flex-direction: column;
         align-items: flex-start;
@@ -229,11 +246,12 @@
           </p>
           <a href="#catalogo" class="btn">Quiero mi HelioSkin</a>
         </div>
+
+        <!-- AQUÍ VA TU IMAGEN BONITA -->
         <div class="hero-img">
-          <p>
-            Aquí puedes colocar una imagen creada con IA de tu producto HelioSkin:
-            un envase moderno de protector solar sobre un fondo claro y luminoso.
-          </p>
+          <div class="hero-img-inner">
+            <img src="helioskin-producto.png" alt="Envase del protector solar HelioSkin">
+          </div>
         </div>
       </div>
     </section>
@@ -320,55 +338,3 @@
               y siento mi rostro más protegido.
             </p>
             <p class="cliente">— María J., 34 años</p>
-          </div>
-          <div class="tarjeta">
-            <div class="estrellas">★★★★★</div>
-            <p class="reseña-texto">
-              Me gusta que parte de lo que pago vaya a un proyecto social. Siento que cuido mi piel
-              y también apoyo a otros.
-            </p>
-            <p class="cliente">— Kevin M., 19 años</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROYECTO SOCIAL -->
-    <section id="proyecto-social">
-      <div class="contenedor">
-        <h2>Proyecto Social “Piel Protegida”</h2>
-        <p class="section-intro">
-          El 25% de nuestras ganancias se destina a llevar educación y protección solar a comunidades vulnerables.
-        </p>
-        <div class="tarjeta">
-          <p>
-            En HelioSkin creemos que la protección solar no debe ser un lujo. Por eso, nuestro proyecto social
-            <strong>“Piel Protegida”</strong> está enfocado en niños, adolescentes y familias que viven en zonas
-            con alta radiación solar.
-          </p>
-          <ul class="lista-proyecto">
-            <li><span>👧👦 Niños y adolescentes:</span> trabajamos con colegios de comunidades altoandinas y zonas
-              periféricas para enseñarles a cuidar su piel.</li>
-            <li><span>🧴 Donación de protectores:</span> por cada 10 productos vendidos, donamos 1 protector solar
-              a estudiantes de estas comunidades.</li>
-            <li><span>📚 Talleres educativos:</span> realizamos charlas sobre prevención del cáncer de piel y hábitos
-              saludables al exponerse al sol.</li>
-            <li><span>🤝 Alianzas locales:</span> nos articulamos con centros de salud y organizaciones locales para
-              que el impacto sea sostenible.</li>
-          </ul>
-          <p style="margin-top: 1rem;">
-            Cada vez que compras un producto HelioSkin, no solo cuidas tu piel: también ayudas a que más personas
-            aprendan a protegerse del sol. 🌞💛
-          </p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="contenedor">
-      © 2025 HelioSkin – Proyecto académico PA4. Todos los derechos reservados.
-    </div>
-  </footer>
-</body>
-</html>
