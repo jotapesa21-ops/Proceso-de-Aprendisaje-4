@@ -1,12 +1,374 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HelioSkin</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HelioSkin – Protección Solar</title>
+  <style>
+    :root {
+      --color-primario: #ffb347;
+      --color-secundario: #ffdd80;
+      --color-fondo: #fffaf0;
+      --color-texto: #333333;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    body {
+      background: var(--color-fondo);
+      color: var(--color-texto);
+      line-height: 1.6;
+    }
+    header {
+      background: #ffffff;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid #eee;
+    }
+    .contenedor {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: #ff9800;
+    }
+    .menu a {
+      margin-left: 1rem;
+      text-decoration: none;
+      color: #555;
+      font-size: 0.95rem;
+    }
+    .menu a:hover {
+      color: #ff9800;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 2rem;
+      align-items: center;
+      padding: 3rem 0 2rem;
+    }
+    .hero-text h1 {
+      font-size: 2.3rem;
+      margin-bottom: 0.8rem;
+    }
+    .hero-text p {
+      margin-bottom: 1rem;
+    }
+    .etiqueta-promo {
+      display: inline-block;
+      background: var(--color-secundario);
+      color: #7a4b00;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      margin-bottom: 0.6rem;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 0.5rem;
+      background: var(--color-primario);
+      color: #663300;
+      padding: 0.7rem 1.4rem;
+      border-radius: 999px;
+      border: none;
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+    .btn:hover { opacity: 0.9; }
+    .hero-img {
+      background: linear-gradient(135deg, #ffe0b2, #fff3e0);
+      border-radius: 1.5rem;
+      height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+    }
+    section {
+      padding: 2.5rem 0;
+    }
+    section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    section p.section-intro {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 2rem;
+      font-size: 0.95rem;
+    }
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+    .grid-3 {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+    .tarjeta {
+      background: white;
+      border-radius: 1rem;
+      padding: 1.2rem 1.3rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+      border: 1px solid #f3e4d3;
+    }
+    .tarjeta h3 {
+      margin-bottom: 0.4rem;
+      font-size: 1.1rem;
+    }
+    .precio {
+      font-weight: 700;
+      margin-top: 0.5rem;
+      color: #e65100;
+    }
+    .tag {
+      display: inline-block;
+      background: #fff3e0;
+      color: #bf360c;
+      border-radius: 999px;
+      padding: 0.15rem 0.6rem;
+      font-size: 0.7rem;
+      margin-bottom: 0.4rem;
+    }
+    .reseña-texto {
+      font-size: 0.9rem;
+      margin-bottom: 0.4rem;
+    }
+    .cliente {
+      font-size: 0.85rem;
+      color: #777;
+    }
+    .estrellas {
+      color: #ffb300;
+      font-size: 0.9rem;
+      margin-bottom: 0.3rem;
+    }
+    .lista-proyecto {
+      list-style: none;
+      margin-top: 1rem;
+    }
+    .lista-proyecto li {
+      margin-bottom: 0.7rem;
+      font-size: 0.95rem;
+    }
+    .lista-proyecto span {
+      font-weight: 600;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      padding: 1.5rem 0;
+      color: #777;
+    }
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-img { order: -1; }
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+      .menu a {
+        margin-left: 0;
+        margin-right: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="contenedor">
+      <nav>
+        <div class="logo">HelioSkin</div>
+        <div class="menu">
+          <a href="#inicio">Inicio</a>
+          <a href="#catalogo">Catálogo</a>
+          <a href="#resenas">Reseñas</a>
+          <a href="#proyecto-social">Proyecto social</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- INICIO / PMV -->
+    <section id="inicio">
+      <div class="contenedor hero">
+        <div class="hero-text">
+          <div class="etiqueta-promo">Nuevo lanzamiento • PMV</div>
+          <h1>Protección solar inteligente para tu día a día</h1>
+          <p>
+            HelioSkin es un protector solar ligero, de rápida absorción y resistente al agua,
+            creado para personas que quieren cuidar su piel sin dejar de hacer lo que aman.
+          </p>
+          <p>
+            Nuestro producto mínimo viable es <strong>HelioSkin Daily SPF 50+</strong>,
+            ideal para uso diario en rostro y cuerpo.
+          </p>
+          <p>
+            🎁 <strong>Promoción de lanzamiento:</strong> 10% de descuento en tu primera
+            compra registrando tu correo. Envíos gratis a Lima desde S/ 90.
+          </p>
+          <a href="#catalogo" class="btn">Quiero mi HelioSkin</a>
+        </div>
+        <div class="hero-img">
+          <p>
+            Aquí puedes colocar una imagen creada con IA de tu producto HelioSkin:
+            un envase moderno de protector solar sobre un fondo claro y luminoso.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATÁLOGO -->
+    <section id="catalogo">
+      <div class="contenedor">
+        <h2>Catálogo de productos</h2>
+        <p class="section-intro">
+          Conoce los productos de HelioSkin pensados para distintos estilos de vida.
+        </p>
+        <div class="grid grid-3">
+          <div class="tarjeta">
+            <div class="tag">PMV</div>
+            <h3>HelioSkin Daily SPF 50+</h3>
+            <p>
+              Protector solar de uso diario, textura ligera, no comedogénico y resistente al agua
+              por 80 minutos. Ideal para rostro y cuerpo.
+            </p>
+            <p class="precio">S/ 69.90</p>
+          </div>
+
+          <div class="tarjeta">
+            <div class="tag">Rostro</div>
+            <h3>HelioSkin Urban SPF 50 (Efecto mate)</h3>
+            <p>
+              Protector solar facial con acabado mate para piel mixta o grasa.
+              Controla el brillo y se puede usar debajo del maquillaje.
+            </p>
+            <p class="precio">S/ 79.90</p>
+          </div>
+
+          <div class="tarjeta">
+            <div class="tag">Deporte</div>
+            <h3>HelioSkin Sport SPF 60</h3>
+            <p>
+              Protector solar resistente al sudor y al agua, perfecto para entrenar al aire libre:
+              playa, running, trekking y más.
+            </p>
+            <p class="precio">S/ 74.90</p>
+          </div>
+
+          <div class="tarjeta">
+            <div class="tag">Servicio</div>
+            <h3>Asesoría virtual (30 minutos)</h3>
+            <p>
+              Sesión virtual para ayudarte a elegir el protector solar adecuado según tu tipo de piel
+              y tu rutina diaria.
+            </p>
+            <p class="precio">S/ 35.00</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESEÑAS -->
+    <section id="resenas">
+      <div class="contenedor">
+        <h2>Reseñas de clientes</h2>
+        <p class="section-intro">
+          Reseñas ficticias, pero basadas en la experiencia que queremos lograr con nuestros clientes.
+        </p>
+        <div class="grid grid-3">
+          <div class="tarjeta">
+            <div class="estrellas">★★★★★</div>
+            <p class="reseña-texto">
+              Uso HelioSkin Daily todos los días para ir a la universidad. No me deja la cara brillosa
+              y ya no me quemo caminando al paradero.
+            </p>
+            <p class="cliente">— Valeria R., 21 años</p>
+          </div>
+          <div class="tarjeta">
+            <div class="estrellas">★★★★★</div>
+            <p class="reseña-texto">
+              Entreno al aire libre y probé HelioSkin Sport. No se sale con el sudor y no me arden los ojos.
+              Lo recomiendo un montón.
+            </p>
+            <p class="cliente">— Luis A., 27 años</p>
+          </div>
+          <div class="tarjeta">
+            <div class="estrellas">★★★★☆</div>
+            <p class="reseña-texto">
+              La asesoría virtual me ayudó a entender cómo cuidar mi piel. Ahora uso protector todos los días
+              y siento mi rostro más protegido.
+            </p>
+            <p class="cliente">— María J., 34 años</p>
+          </div>
+          <div class="tarjeta">
+            <div class="estrellas">★★★★★</div>
+            <p class="reseña-texto">
+              Me gusta que parte de lo que pago vaya a un proyecto social. Siento que cuido mi piel
+              y también apoyo a otros.
+            </p>
+            <p class="cliente">— Kevin M., 19 años</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROYECTO SOCIAL -->
+    <section id="proyecto-social">
+      <div class="contenedor">
+        <h2>Proyecto Social “Piel Protegida”</h2>
+        <p class="section-intro">
+          El 25% de nuestras ganancias se destina a llevar educación y protección solar a comunidades vulnerables.
+        </p>
+        <div class="tarjeta">
+          <p>
+            En HelioSkin creemos que la protección solar no debe ser un lujo. Por eso, nuestro proyecto social
+            <strong>“Piel Protegida”</strong> está enfocado en niños, adolescentes y familias que viven en zonas
+            con alta radiación solar.
+          </p>
+          <ul class="lista-proyecto">
+            <li><span>👧👦 Niños y adolescentes:</span> trabajamos con colegios de comunidades altoandinas y zonas
+              periféricas para enseñarles a cuidar su piel.</li>
+            <li><span>🧴 Donación de protectores:</span> por cada 10 productos vendidos, donamos 1 protector solar
+              a estudiantes de estas comunidades.</li>
+            <li><span>📚 Talleres educativos:</span> realizamos charlas sobre prevención del cáncer de piel y hábitos
+              saludables al exponerse al sol.</li>
+            <li><span>🤝 Alianzas locales:</span> nos articulamos con centros de salud y organizaciones locales para
+              que el impacto sea sostenible.</li>
+          </ul>
+          <p style="margin-top: 1rem;">
+            Cada vez que compras un producto HelioSkin, no solo cuidas tu piel: también ayudas a que más personas
+            aprendan a protegerse del sol. 🌞💛
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="contenedor">
+      © 2025 HelioSkin – Proyecto académico PA4. Todos los derechos reservados.
+    </div>
+  </footer>
+</body>
 </html>
