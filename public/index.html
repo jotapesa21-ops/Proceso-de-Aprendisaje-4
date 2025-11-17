@@ -6,10 +6,10 @@
   <title>HelioSkin – Protección Solar y Proyecto Social</title>
   <style>
     :root {
-      --color-fondo: #020617;      /* azul muy oscuro */
+      --color-fondo: #020617;
       --color-superficie: #020617;
-      --color-card: #0f172a;       /* azul grisáceo */
-      --color-acento: #fbbf24;     /* amarillo profesional */
+      --color-card: #0f172a;
+      --color-acento: #fbbf24;
       --color-acento-suave: #facc15;
       --color-texto: #e5e7eb;
       --color-texto-suave: #9ca3af;
@@ -115,7 +115,6 @@
       color: var(--color-texto);
     }
 
-    /* Layout general */
     main {
       max-width: 1120px;
       margin: 0 auto;
@@ -225,7 +224,7 @@
     }
 
     .hero-media {
-      background: radial-gradient(circle at 10% 0, rgba(250, 204, 21, 0.15), transparent 60%),
+      background: radial-gradient(circle at 10% 0, rgba(250, 204, 21, 0.2), transparent 60%),
                   radial-gradient(circle at 90% 100%, rgba(56, 189, 248, 0.2), transparent 65%);
       border-radius: 1.6rem;
       padding: 1.6rem;
@@ -246,7 +245,7 @@
       color: var(--color-texto-suave);
     }
 
-    /* TÍTULOS DE SECCIÓN */
+    /* SECCIONES */
     .sec-head {
       text-align: left;
       margin-bottom: 1.5rem;
@@ -264,14 +263,12 @@
       max-width: 620px;
     }
 
-    /* GRID GENERAL */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
       gap: 1.2rem;
     }
 
-    /* CARDS */
     .card {
       background: radial-gradient(circle at top, #111827 0, #020617 70%);
       border-radius: 1.2rem;
@@ -320,10 +317,6 @@
     .galeria-columna {
       display: grid;
       gap: 1rem;
-    }
-
-    .galeria-columna img {
-      max-height: 180px;
     }
 
     /* PRODUCTO */
@@ -432,19 +425,6 @@
       margin-bottom: 0.5rem;
     }
 
-    .whatsapp-cta {
-      margin-top: 0.9rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.87rem;
-      padding: 0.55rem 0.95rem;
-      border-radius: 999px;
-      background: rgba(16, 185, 129, 0.08);
-      border: 1px solid rgba(16, 185, 129, 0.5);
-      color: #a7f3d0;
-    }
-
     footer {
       text-align: center;
       padding: 1.6rem 1rem 2.3rem;
@@ -538,9 +518,8 @@
       </div>
 
       <div class="hero-botones">
-        <!-- reemplaza 51XXXXXXXXX por tu número real -->
-        <a class="btn-primario" href="https://wa.me/51XXXXXXXXX?text=Hola%20me%20gustaría%20informes%20sobre%20HelioSkin" target="_blank" rel="noopener">
-          Comprar por WhatsApp
+        <a class="btn-primario" href="#productos">
+          Ver línea de productos
         </a>
         <a class="btn-secundario" href="#proyecto-social">
           Ver proyecto social
@@ -553,7 +532,7 @@
     </div>
 
     <div class="hero-media">
-      <!-- imagen campaña social 1 -->
+      <!-- usa aquí la imagen de voluntaria aplicando bloqueador -->
       <img src="./imghelioskin-campana-social-1.png"
            alt="Voluntaria HelioSkin aplicando protector solar a niña en la playa" />
       <p>
@@ -610,28 +589,26 @@
     </div>
   </section>
 
-  <!-- PROYECTO SOCIAL CON GALERÍA -->
+  <!-- PROYECTO SOCIAL -->
   <section id="proyecto-social">
     <div class="sec-head">
       <span class="etiqueta">Proyecto social</span>
       <h2>Campañas HelioSkin: aprender a disfrutar el sol de forma segura</h2>
       <p>
         Las imágenes muestran actividades educativas en la playa, donde el equipo HelioSkin aplica protector,
-        explica su uso correcto y entrega producto como parte de la estrategia de prevención.
+        explica su uso correcto y refuerza hábitos de protección solar desde la infancia.
       </p>
     </div>
 
     <div class="galeria">
-      <!-- imagen grande: collage / stand -->
-      <img src="./imghelioskin-campana-social-2.png"
-           alt="Equipo HelioSkin presentando los productos en un stand en la playa" />
+      <!-- imagen de niños + banner amarillo -->
+      <img src="./imghelioskin-campana-social-3.png"
+           alt="Actividad educativa HelioSkin sobre protección solar con niños en la playa" />
 
       <div class="galeria-columna">
-        <img src="./imghelioskin-campana-social-3.png"
-             alt="Explicación sobre protección solar a niños en la playa" />
-        <!-- si subes otra imagen extra, puedes reemplazar esta por la nueva -->
+        <!-- producto en tonos beige/amarillo -->
         <img src="./helioskin-producto.png"
-             alt="Producto HelioSkin en primer plano sobre la arena" />
+             alt="Envase del protector solar HelioSkin en fondo beige" />
       </div>
     </div>
   </section>
@@ -655,7 +632,7 @@
           en rostro y cuerpo. Diseñado para climas de alta radiación, como las costas del Perú.
         </p>
 
-        <p class="precio">S/ 00.00 <span style="font-size:0.76rem; color:var(--color-texto-suave); font-weight:400;">(reemplaza aquí por tu precio real)</span></p>
+        <p class="precio">S/ 120.00 <span style="font-size:0.76rem; color:var(--color-texto-suave); font-weight:400;">(precio referencial para el proyecto académico)</span></p>
         <p class="nota-precio">
           Presentación familiar. Recomendado aplicar 15–20 minutos antes de la exposición y reaplicar cada 2 horas.
         </p>
@@ -669,7 +646,7 @@
 
       <div class="producto-img-box">
         <img src="./helioskin-producto.png"
-             alt="Envase del producto HelioSkin FPS 50+ sobre la arena" />
+             alt="Envase del producto HelioSkin FPS 50+ sobre fondo beige" />
       </div>
     </div>
   </section>
@@ -708,21 +685,21 @@
   <section id="contacto">
     <div class="sec-head">
       <span class="etiqueta">Contacto</span>
-      <h2>¿Quieres más información sobre HelioSkin o el proyecto social?</h2>
+      <h2>¿Quieres saber más sobre HelioSkin o el proyecto social?</h2>
       <p>
-        Escríbenos para coordinar campañas, alianzas académicas o pedidos de producto. Este formulario es solo
-        demostrativo para la página; puedes conectarlo luego a tu correo real.
+        Este espacio de contacto es demostrativo para la experiencia de aprendizaje. Puedes mantenerlo así para
+        la entrega o conectarlo más adelante a un correo real o a un servicio de formularios.
       </p>
     </div>
 
     <div class="contacto-layout">
-      <form class="form-card" onsubmit="event.preventDefault(); alert('Formulario de demostración para el curso. Conéctalo a tu correo o a un servicio de formularios cuando lo necesites.');">
+      <form class="form-card" onsubmit="event.preventDefault(); alert('Formulario de demostración para el curso.');">
         <div class="campo">
           <label for="nombre">Nombre</label>
           <input id="nombre" type="text" placeholder="Escribe tu nombre" />
         </div>
         <div class="campo">
-          <label for="correo">Correo electrónico</label>
+          <label for="correo">Correo electrónico (opcional)</label>
           <input id="correo" type="email" placeholder="tucorreo@ejemplo.com" />
         </div>
         <div class="campo">
@@ -733,19 +710,14 @@
       </form>
 
       <div class="contacto-info">
-        <p><strong style="color:var(--color-texto);">Horarios de atención</strong><br>
+        <p><strong style="color:var(--color-texto);">Horarios de atención (referencial)</strong><br>
           Lunes a sábado, 9:00 a.m. – 7:00 p.m.</p>
         <p><strong style="color:var(--color-texto);">Ubicación</strong><br>
           Lima – Perú · Proyección a campañas en costa y sur del país.</p>
-        <p><strong style="color:var(--color-texto);">Redes y contacto directo</strong><br>
-          Correo: <em>tu-correo@ejemplo.com</em><br>
-          Instagram: <em>@helioskin.pe</em> (reemplázalo por el real)
+        <p><strong style="color:var(--color-texto);">Redes sociales (ejemplo)</strong><br>
+          Instagram: <em>@helioskin.pe</em>  
+          <span style="font-size:0.75rem; color:var(--color-texto-suave); display:block; margin-top:0.2rem;">(puedes cambiarlo o dejarlo solo como demostración)</span>
         </p>
-
-        <!-- reemplaza 51XXXXXXXXX por tu número real -->
-        <a class="whatsapp-cta" href="https://wa.me/51XXXXXXXXX?text=Hola%20me%20interesa%20el%20proyecto%20social%20HelioSkin" target="_blank" rel="noopener">
-          💬 Escribir por WhatsApp
-        </a>
       </div>
     </div>
   </section>
