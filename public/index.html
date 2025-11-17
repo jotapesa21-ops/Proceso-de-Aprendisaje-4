@@ -1,30 +1,737 @@
-<!-- PROYECTO SOCIAL -->
-<section id="proyecto-social">
-  <div class="sec-head">
-    <span class="etiqueta">Proyecto social</span>
-    <h2>Campañas HelioSkin: aprender a disfrutar el sol de forma segura</h2>
-    <p>
-      Las imágenes muestran actividades reales del proyecto educativo HelioSkin, incluyendo enseñanza del uso correcto 
-      del protector solar y visuales profesionales del producto en tonos suaves beige y blanco.
-    </p>
-  </div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HelioSkin – Protección Solar y Proyecto Social</title>
+  <style>
+    :root {
+      --color-fondo: #020617;
+      --color-card: #0f172a;
+      --color-acento: #fbbf24;
+      --color-acento-suave: #facc15;
+      --color-texto: #e5e7eb;
+      --color-texto-suave: #9ca3af;
+      --color-borde: #1f2937;
+    }
 
-  <div class="galeria">
-    
-    <!-- Imagen educativa con niños -->
-    <img src="./imghelioskin-campana-social-3.png"
-         alt="Actividad educativa HelioSkin sobre protección solar con niños en la playa">
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
 
-    <div class="galeria-columna">
-      
-      <!-- Producto en beige (primera imagen nueva) -->
-      <img src="./imghelioskin-campana-social-4.png"
-           alt="Presentación del protector solar HelioSkin en fondo beige">
+    body {
+      background: radial-gradient(circle at top, #0b1120 0, #020617 55%, #000 100%);
+      color: var(--color-texto);
+      line-height: 1.6;
+    }
 
-      <!-- Producto con crema al costado (segunda imagen nueva) -->
-      <img src="./imghelioskin-campana-social-5.png"
-           alt="Envase HelioSkin SPF 50+ con crema del producto sobre fondo beige">
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(
+        to right,
+        rgba(15, 23, 42, 0.9),
+        rgba(2, 6, 23, 0.9)
+      );
+      border-bottom: 1px solid #111827;
+      padding: 0.8rem 1.5rem;
+    }
+
+    .header-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .logo-marca {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #facc15, #f97316);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 18px rgba(250, 204, 21, 0.7);
+      color: #111827;
+      font-size: 1.1rem;
+      font-weight: 800;
+    }
+
+    .logo-texto {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-texto span:first-child {
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+    }
+
+    .logo-texto span:last-child {
+      font-size: 0.7rem;
+      color: var(--color-texto-suave);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+
+    nav a {
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      color: var(--color-texto-suave);
+      transition: background 0.2s, color 0.2s;
+    }
+
+    nav a:hover {
+      background: rgba(55, 65, 81, 0.6);
+      color: var(--color-texto);
+    }
+
+    /* LAYOUT GENERAL */
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 1.5rem 1.2rem 3rem;
+    }
+
+    section {
+      margin-top: 3rem;
+    }
+
+    .etiqueta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.75rem;
+      padding: 0.22rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(251, 191, 36, 0.4);
+      color: var(--color-acento-suave);
+      background: rgba(15, 23, 42, 0.8);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero-txt h1 {
+      font-size: 2.3rem;
+      margin-top: 0.7rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-txt p {
+      font-size: 0.98rem;
+      color: var(--color-texto-suave);
+      max-width: 520px;
+      margin-bottom: 1.3rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .badge {
+      font-size: 0.72rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      background: rgba(31, 41, 55, 0.9);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      color: #e5e7eb;
+    }
+
+    .hero-botones {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .btn-primario,
+    .btn-secundario {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.8rem 1.4rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: transform 0.15s, box-shadow 0.15s, background 0.15s, border 0.15s;
+    }
+
+    .btn-primario {
+      background: radial-gradient(circle at 30% 20%, #facc15, #f97316);
+      color: #111827;
+      box-shadow: 0 12px 30px rgba(248, 181, 0, 0.4);
+    }
+
+    .btn-primario:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 40px rgba(248, 181, 0, 0.55);
+    }
+
+    .btn-secundario {
+      background: transparent;
+      border-color: #4b5563;
+      color: var(--color-texto);
+    }
+
+    .btn-secundario:hover {
+      background: rgba(31, 41, 55, 0.9);
+    }
+
+    .hero-nota {
+      font-size: 0.78rem;
+      color: var(--color-texto-suave);
+    }
+
+    .hero-media {
+      background: radial-gradient(circle at 10% 0, rgba(250, 204, 21, 0.2), transparent 60%),
+                  radial-gradient(circle at 90% 100%, rgba(56, 189, 248, 0.2), transparent 65%);
+      border-radius: 1.6rem;
+      padding: 1.6rem;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.85);
+    }
+
+    .hero-media img {
+      width: 100%;
+      border-radius: 1.2rem;
+      display: block;
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.65);
+    }
+
+    .hero-media p {
+      margin-top: 0.6rem;
+      font-size: 0.78rem;
+      color: var(--color-texto-suave);
+    }
+
+    /* SECCIONES GENERALES */
+    .sec-head {
+      text-align: left;
+      margin-bottom: 1.5rem;
+    }
+
+    .sec-head h2 {
+      font-size: 1.3rem;
+      margin-top: 0.3rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .sec-head p {
+      font-size: 0.9rem;
+      color: var(--color-texto-suave);
+      max-width: 620px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .card {
+      background: radial-gradient(circle at top, #111827 0, #020617 70%);
+      border-radius: 1.2rem;
+      border: 1px solid var(--color-borde);
+      padding: 1.2rem 1.3rem;
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.75);
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .card p {
+      font-size: 0.87rem;
+      color: var(--color-texto-suave);
+    }
+
+    .pill {
+      display: inline-block;
+      font-size: 0.72rem;
+      padding: 0.18rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(75, 85, 99, 0.5);
+      color: #e5e7eb;
+      margin-bottom: 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    /* GALERÍA PROYECTO SOCIAL */
+    .galeria {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 1.2rem;
+    }
+
+    .galeria img {
+      display: block;
+      width: 100%;
+      border-radius: 1.1rem;
+      object-fit: cover;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.9);
+    }
+
+    .galeria-columna {
+      display: grid;
+      gap: 1rem;
+    }
+
+    /* PRODUCTO */
+    .producto-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .producto-img-box {
+      background: radial-gradient(circle at top, rgba(250, 204, 21, 0.2), transparent 65%);
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      border: 1px solid var(--color-borde);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.9);
+    }
+
+    .producto-img-box img {
+      display: block;
+      margin: 0 auto;
+      max-width: 260px;
+      border-radius: 1.1rem;
+    }
+
+    .precio {
+      margin-top: 0.7rem;
+      font-weight: 700;
+      color: var(--color-acento);
+    }
+
+    .nota-precio {
+      font-size: 0.78rem;
+      color: var(--color-texto-suave);
+    }
+
+    /* TESTIMONIOS */
+    .testimonios {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+
+    .testimonio {
+      background: radial-gradient(circle at top, #020617 0, #000 65%);
+      border-radius: 1.1rem;
+      border: 1px solid var(--color-borde);
+      padding: 1rem 1.1rem;
+      font-size: 0.84rem;
+      color: var(--color-texto-suave);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.95);
+    }
+
+    .testimonio strong {
+      display: block;
+      margin-top: 0.5rem;
+      color: var(--color-texto);
+      font-size: 0.82rem;
+    }
+
+    /* CONTACTO */
+    .contacto-layout {
+      display: grid;
+      gap: 1.8rem;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    }
+
+    .form-card {
+      background: radial-gradient(circle at top, #111827 0, #020617 70%);
+      border-radius: 1.2rem;
+      border: 1px solid var(--color-borde);
+      padding: 1.3rem;
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.9);
+    }
+
+    .campo {
+      margin-bottom: 0.9rem;
+    }
+
+    .campo label {
+      display: block;
+      font-size: 0.8rem;
+      margin-bottom: 0.25rem;
+      color: var(--color-texto-suave);
+    }
+
+    .campo input,
+    .campo textarea {
+      width: 100%;
+      padding: 0.6rem 0.75rem;
+      border-radius: 0.7rem;
+      border: 1px solid #374151;
+      background: #020617;
+      color: var(--color-texto);
+      font-size: 0.88rem;
+    }
+
+    .campo textarea {
+      resize: vertical;
+      min-height: 90px;
+    }
+
+    .contacto-info p {
+      font-size: 0.86rem;
+      color: var(--color-texto-suave);
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.6rem 1rem 2.3rem;
+      font-size: 0.76rem;
+      color: var(--color-texto-suave);
+      border-top: 1px solid #111827;
+      margin-top: 3rem;
+    }
+
+    footer span {
+      color: var(--color-acento-suave);
+    }
+
+    /* RESPONSIVE */
+    @media (min-width: 768px) {
+      .hero {
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 720px) {
+      header {
+        padding-inline: 1rem;
+      }
+
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        font-size: 0.83rem;
+      }
+
+      main {
+        padding-inline: 1rem;
+      }
+
+      .galeria {
+        grid-template-columns: 1fr;
+      }
+
+      .producto-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .contacto-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <div class="logo-marca">H</div>
+      <div class="logo-texto">
+        <span>HelioSkin</span>
+        <span>Protección solar</span>
+      </div>
     </div>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#beneficios">Beneficios</a>
+      <a href="#proyecto-social">Proyecto social</a>
+      <a href="#productos">Productos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
   </div>
-</section>
+</header>
+
+<main id="inicio">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-txt">
+      <span class="etiqueta">FPS 50+ · proyecto con impacto</span>
+      <h1>Protección solar efectiva para un Perú que vive al sol</h1>
+      <p>
+        HelioSkin combina protección de amplio espectro, textura ligera y un proyecto social que
+        lleva educación sobre radiación UV a familias de la costa peruana.
+      </p>
+
+      <div class="hero-badges">
+        <span class="badge">Amplio espectro UVA/UVB</span>
+        <span class="badge">Resistente al agua y sudor</span>
+        <span class="badge">Apto para piel sensible</span>
+      </div>
+
+      <div class="hero-botones">
+        <a class="btn-primario" href="#productos">
+          Ver línea de productos
+        </a>
+        <a class="btn-secundario" href="#proyecto-social">
+          Ver proyecto social
+        </a>
+      </div>
+
+      <p class="hero-nota">
+        Proyecto académico desarrollado para demostrar una propuesta de marca con componente social.
+      </p>
+    </div>
+
+    <div class="hero-media">
+      <!-- portada principal: imagenchatgpt1 -->
+      <img src="./imagenchatgpt1.png"
+           alt="Portada del proyecto HelioSkin, protección solar y educación" />
+      <p>
+        Imagen conceptual del proyecto HelioSkin como marca de protección solar con enfoque educativo.
+      </p>
+    </div>
+  </section>
+
+  <!-- BENEFICIOS -->
+  <section id="beneficios">
+    <div class="sec-head">
+      <span class="etiqueta">Beneficios</span>
+      <h2>Por qué HelioSkin cuida más que tu piel</h2>
+      <p>
+        Formulado para soportar la radiación intensa del Perú, HelioSkin protege la piel y al mismo
+        tiempo impulsa acciones de prevención en comunidades costeras.
+      </p>
+    </div>
+
+    <div class="grid">
+      <article class="card">
+        <span class="pill">Protección</span>
+        <h3>FPS 50+ de amplio espectro</h3>
+        <p>
+          Ayuda a prevenir quemaduras, manchas y envejecimiento prematuro causados por los rayos UVA y UVB,
+          ideal para exposición diaria y recreativa.
+        </p>
+      </article>
+      <article class="card">
+        <span class="pill">Comodidad</span>
+        <h3>Textura ligera de uso diario</h3>
+        <p>
+          Se absorbe rápido, no deja sensación pegajosa y es compatible con maquillaje, trabajo de oficina
+          o actividades al aire libre.
+        </p>
+      </article>
+      <article class="card">
+        <span class="pill">Resistencia</span>
+        <h3>Agua, sudor y movimiento</h3>
+        <p>
+          Pensado para deporte, playa y juegos en familia. Mantiene la protección por más tiempo, siempre
+          acompañada de reaplicación responsable.
+        </p>
+      </article>
+      <article class="card">
+        <span class="pill">Impacto social</span>
+        <h3>Educación sobre radiación UV</h3>
+        <p>
+          Parte del proyecto se enfoca en charlas, dinámicas y campañas gratuitas en playas para enseñar a
+          niños y adultos a protegerse mejor del sol.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- PROYECTO SOCIAL (usa 3 imágenes distintas) -->
+  <section id="proyecto-social">
+    <div class="sec-head">
+      <span class="etiqueta">Proyecto social</span>
+      <h2>Campañas HelioSkin: aprender a disfrutar el sol de forma segura</h2>
+      <p>
+        Las imágenes muestran actividades educativas en la playa, donde el equipo HelioSkin aplica protector,
+        explica su uso correcto y refuerza hábitos de protección solar desde la infancia, junto con visuales
+        de producto en tonos suaves beige y blanco.
+      </p>
+    </div>
+
+    <div class="galeria">
+      <!-- Imagen grande: campaña social 1 -->
+      <img src="./imghelioskin-campana-social-1.png"
+           alt="Equipo HelioSkin realizando una campaña de protección solar en la playa">
+
+      <div class="galeria-columna">
+        <!-- Columna 1: campaña social 2 -->
+        <img src="./imghelioskin-campana-social-2.png.png"
+             alt="Voluntarias HelioSkin explicando el uso del protector solar">
+
+        <!-- Columna 2: campaña social 3 -->
+        <img src="./imghelioskin-campana-social-3.png.png"
+             alt="Actividad educativa sobre protección solar con niños en la playa">
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTO PRINCIPAL (usa helioskin-producto.png) -->
+  <section id="productos">
+    <div class="sec-head">
+      <span class="etiqueta">Productos</span>
+      <h2>Línea HelioSkin para uso diario y recreativo</h2>
+      <p>
+        Presentación pensada para familias, deportistas y personas que pasan varias horas al aire libre.
+        Esta sección muestra un ejemplo de producto principal, con un precio referencial para el proyecto.
+      </p>
+    </div>
+
+    <div class="producto-layout">
+      <div>
+        <h3>HelioSkin FPS 50+ – Protector solar de amplio espectro</h3>
+        <p style="font-size:0.92rem; color:var(--color-texto-suave); margin-top:0.4rem;">
+          Protector solar con textura ligera que se adapta a distintos tipos de piel, ideal para uso diario
+          en rostro y cuerpo. Diseñado para climas de alta radiación, como las costas del Perú.
+        </p>
+
+        <p class="precio">S/ 120.00 <span style="font-size:0.76rem; color:var(--color-texto-suave); font-weight:400;">(precio referencial para el proyecto académico)</span></p>
+        <p class="nota-precio">
+          Presentación familiar. Recomendado aplicar 15–20 minutos antes de la exposición y reaplicar cada 2 horas.
+        </p>
+
+        <ul style="margin-top:0.9rem; font-size:0.85rem; color:var(--color-texto-suave); padding-left:1.1rem;">
+          <li>Uso diario en ciudad, colegios, trabajo y playa.</li>
+          <li>Ayuda a reducir el riesgo de daño acumulativo por radiación.</li>
+          <li>Apoya las campañas educativas del proyecto HelioSkin.</li>
+        </ul>
+      </div>
+
+      <div class="producto-img-box">
+        <img src="./helioskin-producto.png"
+             alt="Envase del protector solar HelioSkin sobre fondo beige" />
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section>
+    <div class="sec-head">
+      <span class="etiqueta">Experiencias</span>
+      <h2>Lo que podrían comentar las familias de nuestras campañas</h2>
+      <p>
+        Testimonios ficticios que ayudan a tu docente a visualizar el impacto potencial del proyecto social
+        asociado a HelioSkin.
+      </p>
+    </div>
+
+    <div class="testimonios">
+      <article class="testimonio">
+        “Nunca nos habían explicado así de claro cómo aplicar el bloqueador. Ahora mis hijos entienden por qué
+        es importante reaplicarlo y ya es parte de nuestra rutina de playa.”
+        <strong>Madre de familia – Costa verde</strong>
+      </article>
+      <article class="testimonio">
+        “La dinámica con los niños fue súper didáctica. Aprendieron jugando y al final todos querían usar
+        protector antes de volver a la arena.”
+        <strong>Docente invitada a la campaña</strong>
+      </article>
+      <article class="testimonio">
+        “Además de recibir el producto, nos dieron tips sencillos para protegernos del sol en el trabajo al
+        aire libre. Se nota que es un proyecto con intención educativa real.”
+        <strong>Trabajador de servicios – Sur del Perú</strong>
+      </article>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <div class="sec-head">
+      <span class="etiqueta">Contacto</span>
+      <h2>Espacio de contacto para el proyecto académico</h2>
+      <p>
+        Este formulario es solo demostrativo para la entrega del curso. No envía información real, pero
+        muestra cómo podría funcionar una futura página de contacto para la marca.
+      </p>
+    </div>
+
+    <div class="contacto-layout">
+      <form class="form-card" onsubmit="event.preventDefault(); alert('Formulario de demostración para el curso.');">
+        <div class="campo">
+          <label for="nombre">Nombre</label>
+          <input id="nombre" type="text" placeholder="Escribe tu nombre" />
+        </div>
+        <div class="campo">
+          <label for="correo">Correo electrónico (opcional)</label>
+          <input id="correo" type="email" placeholder="ejemplo@correo.com" />
+        </div>
+        <div class="campo">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" placeholder="Quisiera saber más sobre..."></textarea>
+        </div>
+        <button type="submit" class="btn-primario">Enviar mensaje</button>
+      </form>
+
+      <div class="contacto-info">
+        <p><strong style="color:var(--color-texto);">Horarios de atención (referencial)</strong><br>
+          Lunes a sábado, 9:00 a.m. – 7:00 p.m.</p>
+        <p><strong style="color:var(--color-texto);">Ubicación</strong><br>
+          Lima – Perú · Campañas orientadas a la costa y al sur del país.</p>
+        <p><strong style="color:var(--color-texto);">Nota</strong><br>
+          Los datos de contacto finales se definirán en una etapa posterior del proyecto. Esta web es una
+          maqueta funcional para fines educativos.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © <span id="anio"></span> HelioSkin · Proyecto académico de protección solar y educación.
+</footer>
+
+<script>
+  document.getElementById("anio").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
